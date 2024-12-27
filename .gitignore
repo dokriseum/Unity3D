@@ -1,0 +1,25 @@
+# Unity spezifisch
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Crash Reports
+*.stacktrace
+
+# Unity Spielstatus
+*.pidb
+*.suo
+*.csproj
+*.unityproj
+*.sln
+
+# JetBrains Rider spezifisch
+.idea/
+*.iml
+*.ipr
+*.iws
+
