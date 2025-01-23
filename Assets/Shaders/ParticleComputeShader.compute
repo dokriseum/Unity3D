@@ -1,0 +1,24 @@
+#pragma kernel CSMain
+
+struct Particle
+{
+    float3 position;
+    float3 velocity;
+    float4 color;
+};
+
+RWStructuredBuffer<Particle> particles;
+
+float deltaTime;
+
+[numthreads(1024, 1, 1)]
+void CSMain(uint id : SV_DispatchThreadID)
+{
+    Particle p = particles[id];
+    p.position += p.velocity * deltaTime;
+
+    if (length(p.position) > 10.0f)
+        p.velocity *= -1.0f;
+
+    particles[id] = p;
+}
